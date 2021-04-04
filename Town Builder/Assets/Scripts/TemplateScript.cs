@@ -12,9 +12,14 @@ public class TemplateScript : MonoBehaviour
 
     public LayerMask allTilesLayer;
 
+    public GameObject placementManager;
+
     public int Cost;
 
-
+    private void Start()
+    {
+        placementManager = GameObject.Find("Placement Manager");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +39,7 @@ public class TemplateScript : MonoBehaviour
 				{
                     Instantiate(finalObject, transform.position, Quaternion.identity);
                     GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency -= Cost;
+                    Destroy(placementManager.GetComponent<PlacementScript>().currentlySelectedObject);
                 }
                 
             }

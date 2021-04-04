@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa0b567128b0734d8f7648ebe1925d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentlySelectedObject: {fileID: 0}
   selectableObjects:
   - {fileID: 3434164649662927348, guid: 2396135f0c7baaf4296ce70128690c3d, type: 3}
   - {fileID: 3246847044308272467, guid: bad9e5158cdd63740bb04fe7b2774453, type: 3}
@@ -385,7 +386,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363516037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241939749}
+        m_TargetAssemblyTypeName: PlacementScript, Assembly-CSharp
+        m_MethodName: SpawnRock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &363516037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,6 +1106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Currency: 1
+  Wood: 0
+  Stone: 0
+  Metal: 0
+  Population: 0
 --- !u!4 &1564756724
 Transform:
   m_ObjectHideFlags: 0
@@ -1552,7 +1569,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1796667081}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241939749}
+        m_TargetAssemblyTypeName: PlacementScript, Assembly-CSharp
+        m_MethodName: SpawnGrass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1796667081
 MonoBehaviour:
   m_ObjectHideFlags: 0

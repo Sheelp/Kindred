@@ -6,11 +6,14 @@ public class PlacementScript : MonoBehaviour
 {
     private int selectedObjectInArray;
 
-    private GameObject currentlySelectedObject;
+    public GameObject currentlySelectedObject;
 
     public GameObject[] selectableObjects;
 
     private bool isAnObjectSelected = false;
+
+    Vector2 spawnPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,18 +21,14 @@ public class PlacementScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 spawnPos = new Vector2(Mathf.Round(mousePos.x),Mathf.Round(mousePos.y));
+        spawnPos = new Vector2(Mathf.Round(mousePos.x),Mathf.Round(mousePos.y));
 
-        if(Input.GetKeyDown("e") && isAnObjectSelected == false)
-		{
-            currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
-            isAnObjectSelected = true;
-		}
 
-        if(Input.GetMouseButtonDown(1) && isAnObjectSelected == true)
+        
+        if (Input.GetMouseButtonDown(1) && isAnObjectSelected == true)
 		{
             Destroy(currentlySelectedObject);
             isAnObjectSelected = false;
@@ -60,5 +59,18 @@ public class PlacementScript : MonoBehaviour
             Destroy(currentlySelectedObject);
             currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
         }
+    }
+
+    public void SpawnGrass()
+    {
+        selectedObjectInArray = 0;
+        currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
+        isAnObjectSelected = true; 
+    }
+    public void SpawnRock()
+    {
+        selectedObjectInArray = 1;
+        currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
+        isAnObjectSelected = true;
     }
 }
