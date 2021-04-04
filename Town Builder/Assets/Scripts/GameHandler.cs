@@ -6,6 +6,10 @@ public class GameHandler : MonoBehaviour
 {
 
     public int Currency;
+    public int Wood;
+    public int Stone;
+    public int Metal;
+    public int Population;
     // Start is called before the first frame update
     void Start()
     {
