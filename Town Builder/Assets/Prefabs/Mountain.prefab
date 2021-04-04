@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8752426381263918338}
   - component: {fileID: 7186684221671203142}
   m_Layer: 6
-  m_Name: Boulder
+  m_Name: Mountain
   m_TagString: Grass TIle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
