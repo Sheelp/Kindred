@@ -7,7 +7,18 @@ public class HUDScript : MonoBehaviour
 {
 
     public static int Currency;
+
     Text currencyText;
+
+    public GameObject buildmenu;
+
+    private bool menuUp = false;
+
+    public GameObject templateGrass;
+
+    public GameObject templateBoulder;
+
+    private GameObject currentlySelectedObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +31,29 @@ public class HUDScript : MonoBehaviour
     {
         Currency = GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency;
         currencyText.text = "Currency " + Currency.ToString();
+    }
+
+    public void DisplayBuildMenu()
+	{
+        if(!menuUp)
+		{
+            buildmenu.SetActive(true);
+            menuUp = true;
+        }
+        else
+		{
+            buildmenu.SetActive(false);
+            menuUp = false;
+            Destroy(currentlySelectedObject);
+        }
+    }
+
+    public void ClickGrassTile()
+	{
+        currentlySelectedObject = (GameObject)Instantiate(templateGrass, transform.position, Quaternion.identity);
+    }
+    public void ClickBoulderTile()
+    {
+        currentlySelectedObject = (GameObject)Instantiate(templateBoulder, transform.position, Quaternion.identity);
     }
 }
