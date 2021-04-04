@@ -12,6 +12,9 @@ public class TemplateScript : MonoBehaviour
 
     public LayerMask allTilesLayer;
 
+    public int Cost;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +30,12 @@ public class TemplateScript : MonoBehaviour
 		    
             if(rayHit.collider == null)
 			{
-                Instantiate(finalObject, transform.position, Quaternion.identity);
+                if((GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency - Cost) >= 0)
+				{
+                    Instantiate(finalObject, transform.position, Quaternion.identity);
+                    GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency -= Cost;
+                }
+                
             }
         }
     }
