@@ -9,12 +9,21 @@ public class HUDScript : MonoBehaviour
 {
 
     public static int Currency;
+    public static int Wood;
+    public static int Stone;
+    public static int Population;
+    public static int Metal;
 
     Text currencyText;
 
     public TextMeshProUGUI woodText;
+    public TextMeshProUGUI popText;
+    public TextMeshProUGUI stoneText;
+    public TextMeshProUGUI metalText;
 
     public GameObject buildmenu;
+
+    public GameObject gameHandler;
 
     private bool menuUp = false;
 
@@ -33,8 +42,18 @@ public class HUDScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Currency = GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency;
-        woodText.text = Currency.ToString();
+        Wood = gameHandler.GetComponent<GameHandler>().Wood;
+        Metal = gameHandler.GetComponent<GameHandler>().Metal;
+        Stone = gameHandler.GetComponent<GameHandler>().Stone;
+        Population = gameHandler.GetComponent<GameHandler>().Population;
+
+
+
+        woodText.text = Wood.ToString();
+        popText.text = Population.ToString();
+        stoneText.text = Stone.ToString();
+        metalText.text = Metal.ToString();
+
     }
 
     public void DisplayBuildMenu()

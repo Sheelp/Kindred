@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TemplateScript : MonoBehaviour
 {
@@ -26,9 +27,9 @@ public class TemplateScript : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y));
 
-        if(Input.GetMouseButtonDown(0))
-		{
-            //
+        if(Input.GetMouseButtonDown(0)&& !EventSystem.current.IsPointerOverGameObject())
+        { 
+            
 
             Vector2 mouseRay = Camera.main.ScreenToWorldPoint(transform.position);
             RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, allTilesLayer);
