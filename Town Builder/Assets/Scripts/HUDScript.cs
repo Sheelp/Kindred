@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class HUDScript : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class HUDScript : MonoBehaviour
     public static int Currency;
 
     Text currencyText;
+
+    public TextMeshProUGUI woodText;
 
     public GameObject buildmenu;
 
@@ -23,14 +27,14 @@ public class HUDScript : MonoBehaviour
     void Start()
     {
         
-        currencyText = GetComponent<Text>();
+        //currencyText = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Currency = GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency;
-        currencyText.text = "Currency " + Currency.ToString();
+        woodText.text = Currency.ToString();
     }
 
     public void DisplayBuildMenu()
