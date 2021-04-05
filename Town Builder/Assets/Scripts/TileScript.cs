@@ -8,25 +8,33 @@ public class TileScript : MonoBehaviour
 
     public int CurrencyInterval = 3;
 
+    public float startBuildTime;
+    private float buildTime;
+
+    public int workers = 1;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        buildTime = startBuildTime;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(timer == CurrencyInterval*60)
-		{
-            timer = 0;
-            GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency += 1;
+        buildTime -= Time.deltaTime * workers;
+        if (buildTime <= 0)
+        {
+            if (timer == CurrencyInterval * 60)
+            {
+                timer = 0;
+                GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency += 1;
+            }
+            else
+            {
+                timer++;
+            }
         }
-        else
-		{
-            timer++;
-        }
-        
     }
 }
