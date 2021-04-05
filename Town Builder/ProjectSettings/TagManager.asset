@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grass TIle
+  - Field Tile
+  - Mountain Tile
+  - Forest Tile
   layers:
   - Default
   - TransparentFX

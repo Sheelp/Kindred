@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &278635908739384482
+--- !u!1 &915902451311097187
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7403975915239733561}
-  - component: {fileID: 2096166228862071360}
-  - component: {fileID: 7121552595222682928}
-  - component: {fileID: 8655408346916055412}
-  m_Layer: 6
-  m_Name: Field
-  m_TagString: Field Tile
+  - component: {fileID: 1543935525252387006}
+  - component: {fileID: 6511856433794867510}
+  - component: {fileID: 4806631561915306899}
+  m_Layer: 0
+  m_Name: Mine Template
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7403975915239733561
+--- !u!4 &1543935525252387006
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278635908739384482}
+  m_GameObject: {fileID: 915902451311097187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.50270873, y: 0.10990496, z: 0}
+  m_LocalPosition: {x: 1.64, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2096166228862071360
+--- !u!212 &6511856433794867510
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278635908739384482}
+  m_GameObject: {fileID: 915902451311097187}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,9 +71,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.09803919, g: 0.7924528, b: 0, a: 1}
+  m_Color: {r: 0.24705884, g: 0.24313727, b: 0.24313727, a: 0.64705884}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,45 +83,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7121552595222682928
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278635908739384482}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &8655408346916055412
+--- !u!114 &4806631561915306899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278635908739384482}
+  m_GameObject: {fileID: 915902451311097187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad4a2e3b6785504d8c41395583f083d, type: 3}
+  m_Script: {fileID: 11500000, guid: 399893298c61aef429d47827ae3064c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrencyInterval: 1
-  WoodIncrease: 0
-  MetalIncrease: 0
-  StoneIncrease: 0
+  finalObject: {fileID: 6851894108801590996, guid: 838515f3331c485408881119e1c81a84, type: 3}
+  allTilesLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  placementManager: {fileID: 0}
+  WoodCost: 20
+  StoneCost: 20
+  MetalCost: 0

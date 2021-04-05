@@ -100,4 +100,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   placementManager: {fileID: 0}
-  Cost: 0
+  WoodCost: 0
+  StoneCost: 0
+  MetalCost: 0

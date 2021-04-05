@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5379262181162750455}
   m_Layer: 6
   m_Name: Forest
-  m_TagString: Grass TIle
+  m_TagString: Forest Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrencyInterval: 3
-  startBuildTime: 5
-  buildTime: 0
-  workers: 1
+  WoodIncrease: 0
+  MetalIncrease: 0
+  StoneIncrease: 0

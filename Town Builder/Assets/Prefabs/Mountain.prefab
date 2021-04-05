@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7186684221671203142}
   m_Layer: 6
   m_Name: Mountain
-  m_TagString: Grass TIle
+  m_TagString: Mountain Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrencyInterval: 2
+  WoodIncrease: 0
+  MetalIncrease: 0
+  StoneIncrease: 0
