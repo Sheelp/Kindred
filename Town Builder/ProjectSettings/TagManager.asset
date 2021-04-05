@@ -8,6 +8,17 @@ TagManager:
   - Field Tile
   - Mountain Tile
   - Forest Tile
+  - Quarry Tile
+  - Mine Tile
+  - House Tile
+  - Logging Cabin Tile
+  - Logging Cabin Template
+  - House Template
+  - Mine Template
+  - Moutain Template
+  - Quarry Template
+  - Field Template
+  - Forest Template
   layers:
   - Default
   - TransparentFX
