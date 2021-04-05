@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 591913985946903207}
   m_Layer: 6
   m_Name: Logging Cabin
-  m_TagString: Field Tile
+  m_TagString: Logging Cabin Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

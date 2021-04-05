@@ -38,8 +38,56 @@ public class TemplateScript : MonoBehaviour
 
             Vector2 mouseRay = Camera.main.ScreenToWorldPoint(transform.position);
             RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, allTilesLayer);
-		    
-            if(rayHit.collider == null)
+		    if((this.gameObject.tag == "Quarry Template")||(this.gameObject.tag == "House Template"))
+
+            {
+                if (rayHit.collider.gameObject.tag == "Field Tile")
+                {
+                    if (((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
+
+                    {
+                        Instantiate(finalObject, transform.position, Quaternion.identity);
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood -= WoodCost;
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone -= StoneCost;
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal -= MetalCost;
+                        Destroy(placementManager.GetComponent<PlacementScript>().currentlySelectedObject);
+                    }
+
+                }
+            }
+            else if(this.gameObject.tag == "Logging Cabin Template")
+			{
+                if (rayHit.collider.gameObject.tag == "Forest Tile")
+                {
+                    if (((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
+
+                    {
+                        Instantiate(finalObject, transform.position, Quaternion.identity);
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood -= WoodCost;
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone -= StoneCost;
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal -= MetalCost;
+                        Destroy(placementManager.GetComponent<PlacementScript>().currentlySelectedObject);
+                    }
+
+                }
+            }
+            else if(this.gameObject.tag == "Mine Template")
+			{
+                if (rayHit.collider.gameObject.tag == "Mountain Tile")
+                {
+                    if (((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
+
+                    {
+                        Instantiate(finalObject, transform.position, Quaternion.identity);
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood -= WoodCost;
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone -= StoneCost;
+                        GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal -= MetalCost;
+                        Destroy(placementManager.GetComponent<PlacementScript>().currentlySelectedObject);
+                    }
+
+                }
+            }
+            else if(rayHit.collider == null)
 			{
                 if(((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2956505405036859884}
   m_Layer: 0
   m_Name: Quarry Template
-  m_TagString: Untagged
+  m_TagString: Quarry Template
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
