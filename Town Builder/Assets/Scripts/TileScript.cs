@@ -15,24 +15,38 @@ public class TileScript : MonoBehaviour
     public int StoneIncrease;
 
 
-    private float buildTime;
-    public float startBuildTime;
+    public float buildTime = 0;
+    public int maxBuildTime;
     public int workers;
+
+    public ProgressBar progressBar;
+    public GameObject bar;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        buildTime = startBuildTime;
+        buildTime = 0;
+
+        progressBar.setMaxBuildTime(maxBuildTime);
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        if (buildTime < maxBuildTime)
+        {
+            buildTime += Time.deltaTime * workers;
+            progressBar.SetBuildTime(buildTime);
+        }
+    }
     void FixedUpdate()
     {
-        buildTime -= Time.deltaTime * workers;
-        if (buildTime<=0) 
+       
+        if (buildTime>=maxBuildTime) 
         {
-            buildTime = 0;
+            buildTime = maxBuildTime;
+            bar.SetActive(false);
             if (timer == CurrencyInterval * 60)
             {
                 timer = 0;
