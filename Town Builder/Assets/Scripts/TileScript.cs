@@ -9,7 +9,7 @@ public class TileScript : MonoBehaviour
     public int CurrencyInterval = 3;
 
     public float startBuildTime;
-    private float buildTime;
+    public float buildTime;
 
     public int workers = 1;
 
@@ -26,6 +26,7 @@ public class TileScript : MonoBehaviour
         buildTime -= Time.deltaTime * workers;
         if (buildTime <= 0)
         {
+            buildTime = 0;
             if (timer == CurrencyInterval * 60)
             {
                 timer = 0;

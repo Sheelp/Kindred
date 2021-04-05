@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrencyInterval: 3
+  startBuildTime: 20
+  buildTime: 0
+  workers: 0
