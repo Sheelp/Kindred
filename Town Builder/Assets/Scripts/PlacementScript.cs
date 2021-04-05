@@ -53,4 +53,32 @@ public class PlacementScript : MonoBehaviour
         currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
         isAnObjectSelected = true;
     }
+    public void spawnForest()
+    {
+        Destroy(currentlySelectedObject);
+        selectedObjectInArray = 2;
+        currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
+        isAnObjectSelected = true;
+    }
+    public void spawnHouse()
+    {
+        Destroy(currentlySelectedObject);
+        selectedObjectInArray = 3;
+        currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
+        isAnObjectSelected = true;
+    }
+    public void spawnLoggingCabin()
+    {
+        Destroy(currentlySelectedObject);
+        selectedObjectInArray = 4;
+        currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
+        isAnObjectSelected = true;
+    }
+    public void spawnMine()
+    {
+        Destroy(currentlySelectedObject);
+        selectedObjectInArray = 5;
+        currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
+        isAnObjectSelected = true;
+    }
 }
