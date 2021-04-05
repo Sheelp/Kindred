@@ -8,6 +8,12 @@ public class TileScript : MonoBehaviour
 
     public int CurrencyInterval = 3;
 
+    public int WoodIncrease;
+
+    public int MetalIncrease;
+
+    public int StoneIncrease;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +27,9 @@ public class TileScript : MonoBehaviour
         if(timer == CurrencyInterval*60)
 		{
             timer = 0;
-            GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency += 1;
+            GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood += WoodIncrease;
+            GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal += MetalIncrease;
+            GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone += StoneIncrease;
         }
         else
 		{

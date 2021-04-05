@@ -122,4 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad4a2e3b6785504d8c41395583f083d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrencyInterval: 3
+  CurrencyInterval: 1
+  WoodIncrease: 0
+  MetalIncrease: 0
+  StoneIncrease: 0

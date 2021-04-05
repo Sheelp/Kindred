@@ -15,7 +15,12 @@ public class TemplateScript : MonoBehaviour
 
     public GameObject placementManager;
 
-    public int Cost;
+    public int WoodCost;
+
+    public int StoneCost;
+
+    public int MetalCost;
+
 
     private void Start()
     {
@@ -36,10 +41,13 @@ public class TemplateScript : MonoBehaviour
 		    
             if(rayHit.collider == null)
 			{
-                if((GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency - Cost) >= 0)
-				{
+                if(((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
+
+                {
                     Instantiate(finalObject, transform.position, Quaternion.identity);
-                    GameObject.Find("GameHandler").GetComponent<GameHandler>().Currency -= Cost;
+                    GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood -= WoodCost;
+                    GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone -= StoneCost;
+                    GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal -= MetalCost;
                     Destroy(placementManager.GetComponent<PlacementScript>().currentlySelectedObject);
                 }
                 
