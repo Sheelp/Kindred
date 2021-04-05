@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4681533459511329631}
   - component: {fileID: 4264633046303524902}
   - component: {fileID: 8453377909720147211}
+  - component: {fileID: 2682128818385573112}
   m_Layer: 6
   m_Name: NPC 1
   m_TagString: Grass TIle
@@ -102,3 +103,29 @@ MonoBehaviour:
   maxX: 11
   minY: -5
   maxY: 5
+--- !u!61 &2682128818385573112
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2730862375551532740}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000047683716, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 0.88}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2766714, y: 0.71064484}
+  m_EdgeRadius: 0

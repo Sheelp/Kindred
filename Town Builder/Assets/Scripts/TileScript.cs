@@ -24,6 +24,7 @@ public class TileScript : MonoBehaviour
     void Start()
     {
         buildTime = startBuildTime;
+        workers = 0;
     }
 
     // Update is called once per frame
@@ -45,5 +46,15 @@ public class TileScript : MonoBehaviour
                 timer++;
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+	{
+        workers++;
+	}
+
+    void OnTriggerExit2D(Collider2D col)
+	{
+        workers--;
     }
 }
