@@ -210,6 +210,7 @@ MonoBehaviour:
   WoodIncrease: 0
   MetalIncrease: 0
   StoneIncrease: 0
+  npc: {fileID: 2730862375551532740, guid: 1ce34fbd1c4b3324c83eea9f1e134cce, type: 3}
   buildTime: 0
   maxBuildTime: 0
   workers: 0
