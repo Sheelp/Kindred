@@ -9,6 +9,8 @@ public class Patrol : MonoBehaviour
     public float startWaitTime;
 
     public Transform moveSpot;
+
+    public GameObject centre;
     public float minX;
     public float maxX;
     public float minY;
@@ -16,8 +18,9 @@ public class Patrol : MonoBehaviour
 
     private void Start()
     {
+        GameObject centre2 = Instantiate(centre, transform.position, Quaternion.identity);
+        moveSpot = centre2.transform;
         waitTime = startWaitTime;
-
         moveSpot.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
     }
 

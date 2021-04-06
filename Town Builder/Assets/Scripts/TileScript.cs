@@ -14,6 +14,7 @@ public class TileScript : MonoBehaviour
 
     public int StoneIncrease;
 
+    public GameObject npc;
 
     public float buildTime = 0;
     public int maxBuildTime;
@@ -22,13 +23,18 @@ public class TileScript : MonoBehaviour
     public ProgressBar progressBar;
     public GameObject bar;
 
-
     // Start is called before the first frame update
     void Start()
     {
         buildTime = 0;
-
+        
         progressBar.setMaxBuildTime(maxBuildTime);
+        if(this.gameObject.tag == "House Tile")
+		{
+            
+            GameObject npcSpawned = Instantiate(npc, transform.position, Quaternion.identity);
+            npcSpawned.GetComponent<Patrol>().moveSpot.position = transform.position;
+        }
     }
 
     // Update is called once per frame

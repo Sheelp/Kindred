@@ -99,10 +99,11 @@ MonoBehaviour:
   speed: 5
   startWaitTime: 2
   moveSpot: {fileID: 937129287857336841, guid: a55302a8941689e45917f509a3940f98, type: 3}
-  minX: -11
-  maxX: 11
-  minY: -5
-  maxY: 5
+  centre: {fileID: 1306896170070277722, guid: 0d4e820be91008b4a82df12ed86cd5a8, type: 3}
+  minX: -1
+  maxX: 1
+  minY: -1
+  maxY: 1
 --- !u!61 &2682128818385573112
 BoxCollider2D:
   m_ObjectHideFlags: 0
