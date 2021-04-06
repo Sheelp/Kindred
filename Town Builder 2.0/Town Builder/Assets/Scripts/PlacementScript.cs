@@ -24,19 +24,19 @@ public class PlacementScript : MonoBehaviour
     public void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        spawnPos = new Vector2(Mathf.Round(mousePos.x),Mathf.Round(mousePos.y));
+        spawnPos = new Vector2(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y));
 
 
-        
+
         if (Input.GetMouseButtonDown(1) && isAnObjectSelected == true)
-		{
+        {
             Destroy(currentlySelectedObject);
             isAnObjectSelected = false;
             selectedObjectInArray = 0;
-		}
+        }
 
-        
-       
+
+
     }
 
     public void SpawnGrass()
@@ -44,7 +44,7 @@ public class PlacementScript : MonoBehaviour
         Destroy(currentlySelectedObject);
         selectedObjectInArray = 0;
         currentlySelectedObject = (GameObject)Instantiate(selectableObjects[selectedObjectInArray], spawnPos, Quaternion.identity);
-        isAnObjectSelected = true; 
+        isAnObjectSelected = true;
     }
     public void SpawnRock()
     {

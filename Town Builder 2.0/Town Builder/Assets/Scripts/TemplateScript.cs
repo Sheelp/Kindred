@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class TemplateScript : MonoBehaviour
 {
-    
+
 
     public GameObject finalObject;
 
@@ -32,13 +32,13 @@ public class TemplateScript : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y));
 
-        if(Input.GetMouseButtonDown(0)&& !EventSystem.current.IsPointerOverGameObject())
-        { 
-            
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+
 
             Vector2 mouseRay = Camera.main.ScreenToWorldPoint(transform.position);
             RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, allTilesLayer);
-		    if((this.gameObject.tag == "Quarry Template")||(this.gameObject.tag == "House Template"))
+            if ((this.gameObject.tag == "Quarry Template") || (this.gameObject.tag == "House Template"))
 
             {
                 if (rayHit.collider.gameObject.tag == "Field Tile")
@@ -55,8 +55,8 @@ public class TemplateScript : MonoBehaviour
 
                 }
             }
-            else if(this.gameObject.tag == "Logging Cabin Template")
-			{
+            else if (this.gameObject.tag == "Logging Cabin Template")
+            {
                 if (rayHit.collider.gameObject.tag == "Forest Tile")
                 {
                     if (((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
@@ -71,8 +71,8 @@ public class TemplateScript : MonoBehaviour
 
                 }
             }
-            else if(this.gameObject.tag == "Mine Template")
-			{
+            else if (this.gameObject.tag == "Mine Template")
+            {
                 if (rayHit.collider.gameObject.tag == "Mountain Tile")
                 {
                     if (((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
@@ -87,9 +87,9 @@ public class TemplateScript : MonoBehaviour
 
                 }
             }
-            else if(rayHit.collider == null)
-			{
-                if(((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
+            else if (rayHit.collider == null)
+            {
+                if (((GameObject.Find("GameHandler").GetComponent<GameHandler>().Wood - WoodCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Stone - StoneCost) >= 0) && ((GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal - MetalCost) >= 0))
 
                 {
                     Instantiate(finalObject, transform.position, Quaternion.identity);
@@ -98,7 +98,7 @@ public class TemplateScript : MonoBehaviour
                     GameObject.Find("GameHandler").GetComponent<GameHandler>().Metal -= MetalCost;
                     Destroy(placementManager.GetComponent<PlacementScript>().currentlySelectedObject);
                 }
-                
+
             }
         }
     }
